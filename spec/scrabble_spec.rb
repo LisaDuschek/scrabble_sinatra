@@ -12,10 +12,10 @@ describe('String#scrabble') do
   end
 
   it("does not accept non-letters") do
-    expect{"46*#^".scrabble()}.to raise_error(ArgumentError)
+    expect{"46*#^t".scrabble()}.to raise_error(ArgumentError)
   end
 
-  it("should be a legitimate English word") do
-    # HOW????
+  it("doesn't care about case") do
+    expect("aBcD".scrabble()).to(eq(9))
   end
 end

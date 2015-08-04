@@ -1,3 +1,5 @@
+require('pry')
+
 class String
   define_method(:scrabble) do
 
