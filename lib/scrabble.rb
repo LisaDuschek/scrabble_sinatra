@@ -6,8 +6,13 @@ class String
                          'S',1,'T',1,'U',1,'V',4,'W',4,'X',8,'Y',4,'Z',10]
 
     sum = 0
-    self.split('').each() do |letter|
-      sum += scrabble_hash[letter.upcase()]
+    self.split('').each() do |character|
+      uppercase_character = character.upcase()
+      if scrabble_hash.has_key? (uppercase_character)
+        sum += scrabble_hash[uppercase_character]
+      else
+        raise ArgumentError.new('input must be composed only of letters')
+      end
     end
     sum
   end

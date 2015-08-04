@@ -11,6 +11,10 @@ describe('String#scrabble') do
     expect("and".scrabble()).to(eq(4))
   end
 
+  it("does not accept non-letters") do
+    expect{"46*#^".scrabble()}.to raise_error(ArgumentError)
+  end
+
   it("should be a legitimate English word") do
     # HOW????
   end
